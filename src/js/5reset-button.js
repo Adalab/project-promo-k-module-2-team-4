@@ -21,6 +21,7 @@ function reset() {
   }
 
   render();
+  addClassPalettes();
 
   profileImageCard.style.backgroundImage = `url(${url})`;
   smallImage.style.backgroundImage = `url(${urlSmall})`;
