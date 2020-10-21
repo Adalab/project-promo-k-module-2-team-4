@@ -7,22 +7,30 @@ const design3 = document.querySelector('.js-design-3');
 
 function changeDesign(event) {
   if (event.currentTarget.value === 'design-1') {
-    designCard.classList.add('palets-1');
-    designCard.classList.remove('palets-2');
-    designCard.classList.remove('palets-3');
-    console.log('121');
+    data.palette = 1;
   }
-
   if (event.currentTarget.value === 'design-2') {
-    designCard.classList.add('palets-2');
-    designCard.classList.remove('palets-3');
-    designCard.classList.remove('palets-1');
+    data.palette = 2;
   }
-
   if (event.currentTarget.value === 'design-3') {
+    data.palette = 3;
+  }
+  addClassPalettes();
+}
+
+function addClassPalettes() {
+  console.log(data);
+  designCard.classList.remove('palets-1');
+  designCard.classList.remove('palets-2');
+  designCard.classList.remove('palets-3');
+  if (data.palette === 1) {
+    designCard.classList.add('palets-1');
+  }
+  if (data.palette === 2) {
+    designCard.classList.add('palets-2');
+  }
+  if (data.palette === 3) {
     designCard.classList.add('palets-3');
-    designCard.classList.remove('palets-2');
-    designCard.classList.remove('palets-1');
   }
 }
 
