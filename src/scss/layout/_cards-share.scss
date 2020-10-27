@@ -54,18 +54,13 @@
 }
 
 .button--share {
-  width: 180px;
-  height: 30px;
-  font-size: 14px;
   background-color: #00a0f5;
   color: $color-white;
-  margin-bottom: 20px;
-  // border-radius: 3px;
-  // border: 1px solid #00a0f5;
-  // box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
-  cursor: pointer;
-  padding: 0 10px;
   text-decoration: none;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
 }
 
 .hidden--border {

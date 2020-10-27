@@ -9,7 +9,6 @@ function sendRequest() {
     },
   })
     .then(function (resp) {
-      console.log(resp);
       return resp.json();
     })
     .then(function (result) {
@@ -18,22 +17,27 @@ function sendRequest() {
     .catch(function (error) {
       console.log(error);
     });
-  console.log(data);
 }
 
 function showURL(result) {
   const linkShare = document.querySelector('.link--share');
   if (result.success) {
     linkShare.innerHTML =
-      '<a class="link--share" href=' + result.cardURL + '>' + result.cardURL + '</a>';
+      '<a class="link--share" href=' +
+      result.cardURL +
+      '>' +
+      result.cardURL +
+      '</a>';
   } else {
     linkShare.innerHTML = 'ERROR:' + result.error;
   }
 }
+
 function createTwitterLink(result) {
   const buttonTwitter = document.querySelector('.button--share');
-  const twitterText = encodeURIComponent('¡He creado mi tarjeta con Montgomery profile cards!');
+  const twitterText = encodeURIComponent(
+    '¡He creado mi tarjeta con Montgomery profile cards!'
+  );
   const twitterURL = document.querySelector('.link--share').href;
-  // const twitterURL = result.cardURL;
   buttonTwitter.href = `https://twitter.com/intent/tweet?text=${twitterText}&url=${twitterURL}`;
 }

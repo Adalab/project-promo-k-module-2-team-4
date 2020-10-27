@@ -27,22 +27,26 @@ for (const input of inputList) {
 }
 
 const render = function () {
-  document.querySelector('.js-cardName').innerHTML = data.name || 'Lisa Simpson';
-  document.querySelector('.js-cardPosition').innerHTML = data.job || 'Saxophonist';
+  document.querySelector('.js-cardName').innerHTML =
+    data.name || 'Lisa Simpson';
+  document.querySelector('.js-cardPosition').innerHTML =
+    data.job || 'Saxophonist';
   document.querySelector('.js-cardEmail').href = 'mailto:' + data.email;
   document.querySelector('.js-cardPhone').href = 'tel:' + data.phone;
-  document.querySelector('.js-cardLinkedin').href = 'https://www.linkedin.com/in/' + data.linkedin;
-  document.querySelector('.js-cardGithub').href = 'https://www.github.com/' + data.github;
+  document.querySelector('.js-cardLinkedin').href =
+    'https://www.linkedin.com/in/' + data.linkedin;
+  document.querySelector('.js-cardGithub').href =
+    'https://www.github.com/' + data.github;
 };
 
 const buttonShare = document.querySelector('.js-button--create');
 const twitterContainer = document.querySelector('.js-twitterContainer');
 const shareTwitter = document.querySelector('.js-section__link--share');
 
-function hideTwitter() {
+function showLinkSection() {
   twitterContainer.classList.remove('hidden');
   shareTwitter.classList.remove('hidden--border');
   buttonShare.classList.add('change-button');
 }
 
-buttonShare.addEventListener('click', hideTwitter);
+buttonShare.addEventListener('click', showLinkSection);
