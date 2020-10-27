@@ -19,6 +19,7 @@ function changeDesign(event) {
   setLocalStorage();
   sendRequest();
   showURL(true);
+  createTwitterLink(true);
 }
 
 function addClassPalettes() {

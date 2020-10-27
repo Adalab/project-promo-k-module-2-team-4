@@ -19,6 +19,7 @@ const saveField = function (event) {
   setLocalStorage();
   sendRequest();
   showURL(true);
+  createTwitterLink(true);
 };
 
 for (const input of inputList) {
