@@ -16,10 +16,10 @@ function changeDesign(event) {
     data.palette = 3;
   }
   addClassPalettes();
+  setLocalStorage();
 }
 
 function addClassPalettes() {
-  console.log(data);
   designCard.classList.remove('palets-1');
   designCard.classList.remove('palets-2');
   designCard.classList.remove('palets-3');

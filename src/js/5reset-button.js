@@ -22,6 +22,10 @@ function reset() {
 
   render();
   addClassPalettes();
+  resetLocalStorage();
+
+  const selectedPalette = document.querySelector('#design-' + data.palette);
+  selectedPalette.click();
 
   profileImageCard.style.backgroundImage = `url(${url})`;
   smallImage.style.backgroundImage = `url(${urlSmall})`;

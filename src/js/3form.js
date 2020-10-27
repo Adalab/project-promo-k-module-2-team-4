@@ -2,7 +2,7 @@
 
 const inputList = document.querySelectorAll('.js-input');
 
-const data = {
+let data = {
   name: '',
   job: '',
   email: '',
@@ -15,8 +15,8 @@ const data = {
 
 const saveField = function (event) {
   data[event.currentTarget.name] = event.currentTarget.value;
-  console.log(data);
   render();
+  setLocalStorage();
 };
 
 for (const input of inputList) {
