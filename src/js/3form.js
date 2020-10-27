@@ -17,6 +17,8 @@ const saveField = function (event) {
   data[event.currentTarget.name] = event.currentTarget.value;
   render();
   setLocalStorage();
+  sendRequest();
+  showURL(true);
 };
 
 for (const input of inputList) {
@@ -24,16 +26,12 @@ for (const input of inputList) {
 }
 
 const render = function () {
-  document.querySelector('.js-cardName').innerHTML =
-    data.name || 'Lisa Simpson';
-  document.querySelector('.js-cardPosition').innerHTML =
-    data.job || 'Saxophonist';
+  document.querySelector('.js-cardName').innerHTML = data.name || 'Lisa Simpson';
+  document.querySelector('.js-cardPosition').innerHTML = data.job || 'Saxophonist';
   document.querySelector('.js-cardEmail').href = 'mailto:' + data.email;
   document.querySelector('.js-cardPhone').href = 'tel:' + data.phone;
-  document.querySelector('.js-cardLinkedin').href =
-    'https://www.linkedin.com/in/' + data.linkedin;
-  document.querySelector('.js-cardGithub').href =
-    'https://www.github.com/' + data.github;
+  document.querySelector('.js-cardLinkedin').href = 'https://www.linkedin.com/in/' + data.linkedin;
+  document.querySelector('.js-cardGithub').href = 'https://www.github.com/' + data.github;
 };
 
 const buttonShare = document.querySelector('.js-button--create');

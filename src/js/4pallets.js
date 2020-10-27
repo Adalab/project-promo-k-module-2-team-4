@@ -17,6 +17,8 @@ function changeDesign(event) {
   }
   addClassPalettes();
   setLocalStorage();
+  sendRequest();
+  showURL(true);
 }
 
 function addClassPalettes() {
