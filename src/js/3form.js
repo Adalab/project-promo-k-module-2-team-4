@@ -17,9 +17,6 @@ const saveField = function (event) {
   data[event.currentTarget.name] = event.currentTarget.value;
   render();
   setLocalStorage();
-  sendRequest();
-  showURL(true);
-  createTwitterLink(true);
 };
 
 for (const input of inputList) {
@@ -38,15 +35,3 @@ const render = function () {
   document.querySelector('.js-cardGithub').href =
     'https://www.github.com/' + data.github;
 };
-
-const buttonShare = document.querySelector('.js-button--create');
-const twitterContainer = document.querySelector('.js-twitterContainer');
-const shareTwitter = document.querySelector('.js-section__link--share');
-
-function showLinkSection() {
-  twitterContainer.classList.remove('hidden');
-  shareTwitter.classList.remove('hidden--border');
-  buttonShare.classList.add('change-button');
-}
-
-buttonShare.addEventListener('click', showLinkSection);

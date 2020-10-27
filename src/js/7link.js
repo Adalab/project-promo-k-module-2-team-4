@@ -1,5 +1,11 @@
 'use strict';
 
+const buttonShare = document.querySelector('.js-button--create');
+const twitterContainer = document.querySelector('.js-twitterContainer');
+const shareTwitter = document.querySelector('.js-section__link--share');
+const linkShare = document.querySelector('.link--share');
+const buttonTwitter = document.querySelector('.button--share');
+
 function sendRequest() {
   fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
     method: 'POST',
@@ -16,11 +22,11 @@ function sendRequest() {
     })
     .catch(function (error) {
       console.log(error);
+      linkShare.innerHTML = 'Error en el servidor';
     });
 }
 
 function showURL(result) {
-  const linkShare = document.querySelector('.link--share');
   if (result.success) {
     linkShare.innerHTML =
       '<a class="link--share" href=' +
@@ -34,10 +40,19 @@ function showURL(result) {
 }
 
 function createTwitterLink(result) {
-  const buttonTwitter = document.querySelector('.button--share');
   const twitterText = encodeURIComponent(
     '¡He creado mi tarjeta con Montgomery profile cards!'
   );
   const twitterURL = document.querySelector('.link--share').href;
   buttonTwitter.href = `https://twitter.com/intent/tweet?text=${twitterText}&url=${twitterURL}`;
 }
+
+function showLinkSection() {
+  twitterContainer.classList.remove('hidden');
+  shareTwitter.classList.remove('hidden--border');
+  buttonShare.classList.add('change-button');
+}
+
+buttonShare.addEventListener('click', showLinkSection);
+buttonShare.addEventListener('click', sendRequest);
+buttonTwitter.addEventListener('click', createTwitterLink);
