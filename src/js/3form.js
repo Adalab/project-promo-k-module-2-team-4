@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-undef */
 'use strict';
 
 const inputList = document.querySelectorAll('.js-input');
