@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 'use strict';
 
 const designCard = document.querySelector('.section__article');
